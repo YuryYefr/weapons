@@ -1,0 +1,28 @@
+{% extends "hand_carried_guns/main.html" %}
+{% block content %}
+    <div class="card">
+        <div class="card-body">
+            <h2 class="model-title">{{ object.technical_name }}</h2>
+            <p class="card-text">weight - {{ object.weight }} kg</p>
+            <p class="card-text">rate of fire - {{ object.rate_of_fire }}</p>
+            <p class="card-text">ammo capacity - {{ object.ammo_capacity }}</p>
+            <p class="card-text">currently in use - {{ object.currently_in_use }}</p>
+        </div>
+    </div>
+{#    <article class="media content-section">#}
+{#        <div class="media-body">#}
+{#            <h2 class="model-title">{{ object.technical_name }}</h2>#}
+{#            <p class="model-content">weight - {{ object.weight }} kg</p>#}
+{#            <p class="model-content">rate of fire - {{ object.rate_of_fire }}</p>#}
+{#            <p class="model-content">ammo capacity - {{ object.ammo_capacity }}</p>#}
+{#            <p class="model-content">currently in use - {{ object.currently_in_use }}</p>#}
+{#        </div>#}
+{#    </article>#}
+    <div class="bot-btn-section">
+        <a class="back-btn" href="{% url 'hand_carried_guns:home' %}">Back to homepage</a>
+        {#        <script>#}
+        {#            let nextModel = window.location.href#}
+        {#        </script>#}
+        {#        <a class="next-btn" href="{% url 'hand_carried_guns-home' %}">Next model</a>#}
+    </div>
+{% endblock content %}

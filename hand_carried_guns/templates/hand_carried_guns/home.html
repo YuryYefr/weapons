@@ -1,0 +1,40 @@
+{% extends 'hand_carried_guns/main.html' %}
+{%  block title %}Weapons{%  endblock %}
+{% block content %}
+    <h3>Click model for details</h3>
+    <br style="line-height:10px">
+    <div class="float-right">
+    <p id="viewers-counter"></p>
+    </div>
+    <div class="model">
+        {% for item in model %}
+            <div class="model">
+                <h4><a class="model-title"
+                       href="{% url 'hand_carried_guns:weapons_detail' item.id %}">{{ item.technical_name }}</a></h4>
+            </div>
+            <iframe width="420" height="315" allowfullscreen
+                    src="{{ item.video_link}}">
+            </iframe>
+        {% endfor %}
+    </div>
+    {% if is_paginated %}
+        {% if page_obj.has_previous %}
+            <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+            <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        {% endif %}
+    {% endif %}
+
+    {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+            <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+    {% endfor %}
+
+
+    {% if is_paginated %}
+        {% if page_obj.has_next %}
+            <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+            <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+        {% endif %}
+    {% endif %}
+{% endblock %}

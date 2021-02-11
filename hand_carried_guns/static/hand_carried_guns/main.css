@@ -1,0 +1,183 @@
+body {
+    background: url("/static/img/gun_image.jpg") fixed;
+    color: #333333;
+    margin-top: 5rem;
+    height: 100%;
+    background-size: cover;
+    opacity: revert;
+}
+
+h1, h2, h4, h5, h6 {
+    color: black;
+}
+
+h3 {
+    color: rgba(177, 190, 242, 0.53)
+}
+
+ul {
+    margin: 0;
+}
+
+.bg-steel {
+    background-color: #5f788a;
+}
+
+.site-header .navbar-nav .nav-link {
+    color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+    color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+    font-weight: 500;
+}
+
+.sidebar-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.model-title {
+    color: rgba(111, 132, 154, 0.73);
+}
+
+a.model-title:hover {
+    color: #428bca;
+    text-decoration: none;
+}
+
+.model-content {
+    white-space: pre-line;
+}
+
+.article-img {
+    height: 65px;
+    width: 65px;
+    margin-right: 16px;
+}
+
+.article-metadata {
+    padding-bottom: 1px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.article-svg {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+.account-img {
+    height: 125px;
+    width: 125px;
+    margin-right: 20px;
+    margin-bottom: 16px;
+}
+
+.account-heading {
+    font-size: 2.5rem;
+}
+
+.back-btn:hover, .next-btn:hover {
+    text-decoration: none;
+    color: #428bca;
+}
+
+.bot-btn-section {
+    display: flex;
+    justify-content: space-between;
+    width: 15rem;
+}
+
+.view_port {
+    position: absolute;
+    background-color: black;
+    height: 25px;
+    width: 710px;
+    overflow: hidden;
+}
+
+.cylon_eye {
+    background-color: red;
+    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.9) 25%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.9) 75%);
+    background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.9) 25%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.9) 75%);
+    background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.9) 25%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.9) 75%);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9) 25%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.9) 75%);
+    color: white;
+    height: 100%;
+    width: 20%;
+
+    -webkit-animation: 4s linear 0s infinite alternate move_eye;
+    -moz-animation: 4s linear 0s infinite alternate move_eye;
+    -o-animation: 4s linear 0s infinite alternate move_eye;
+    animation: 4s linear 0s infinite alternate move_eye;
+}
+
+@-webkit-keyframes move_eye {
+    from {
+        margin-left: -20%;
+    }
+    to {
+        margin-left: 100%;
+    }
+}
+
+@-moz-keyframes move_eye {
+    from {
+        margin-left: -20%;
+    }
+    to {
+        margin-left: 100%;
+    }
+}
+
+@-o-keyframes move_eye {
+    from {
+        margin-left: -20%;
+    }
+    to {
+        margin-left: 100%;
+    }
+}
+
+@keyframes move_eye {
+    from {
+        margin-left: -20%;
+    }
+    to {
+        margin-left: 100%;
+    }
+}
+
+/*.visitors-counter {*/
+/*    left: 50%;*/
+/*    margin-top: 0.5rem;*/
+/*}*/
+p.visitors-counter {
+    border: 1px solid green;
+    margin-bottom: 0;
+    /*background-color: #fff;*/
+}
+
+.about-class {
+    text-align: center;
+    color: green;
+}
+.search-page-title {
+    color: red;
+}
+label {
+    color: yellowgreen;
+}

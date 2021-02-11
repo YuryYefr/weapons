@@ -1,0 +1,30 @@
+{% extends 'hand_carried_guns/main.html' %}
+{% load crispy_forms_filters %}
+<title>{% block title %}Search{% endblock %}</title>
+{% block content %}
+    <div class="col-md-8">
+    <h1 class="search-page-title">Searching weapon</h1>
+    <div class="view_port">
+        <div class="cylon_eye"></div>
+    </div>
+    <br/>
+    <form method="get">
+        {{ filter.form|crispy }}
+        <button class="btn btn-primary">search</button>
+    </form>
+    <br/>
+    <ul>
+        {% if filter.qs %}
+            {% for item in filter.qs %}
+                <li><a class="model-title"
+                       href="{% url 'hand_carried_guns:weapons_detail' item.id %}">{{ item.technical_name }}</a></li>
+            {% endfor %}
+        {% else %}
+            <div class="alert alert-dark">
+                <p class="text-center">Nothing yet here</p>
+            </div>
+        {% endif %}
+    </ul>
+    </div>
+{% endblock %}
+
