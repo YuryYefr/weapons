@@ -39,15 +39,15 @@
             <div style="margin-bottom: 0">
                 <p class="visitors-counter" id="viewers-counter"></p>
             </div>
-                {#                    <div class="navbar-nav">#}
-                {#                    {% if user.is_authenticated %}#}
-                {#                        <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>#}
-                {#                        <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>#}
-                {#                    {% else %}#}
-                {#                        <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>#}
-                {#                        <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>#}
-                {#                    {% endif %}#}
-                {#                    </div>#}
+                                    <div class="navbar-nav">
+                                    {% if user.is_authenticated %}
+{#                                        <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>#}
+                                        <a class="nav-item nav-link" href="{% url 'users:logout' %}">Logout</a>
+                                    {% else %}
+{#                                        <a class="nav-item nav-link" href="{% url 'users:login' %}">Login</a>#}
+                                        <a class="nav-item nav-link" href="{% url 'users:register' %}">Register</a>
+                                    {% endif %}
+                                    </div>
             </div>
         </div>
     </nav>
@@ -58,6 +58,7 @@
             {% if messages %}
                 <strong>{% for message in messages %}
                     <div class="alert alert-{{ message.tags }}">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                         {{ message }}
                     </div>
                 {% endfor %}</strong>
@@ -67,5 +68,14 @@
         <!--        sidebar-->
     </div>
 </main>
+<script>
+    // suppose the `id` attribute of element is `message_container`.
+var message_ele = document.getElementById("message_container");
+
+setTimeout(function(){
+   message_ele.style.display = "none";
+}, 3000);
+// Timeout is 3 sec, you can change it
+</script>
 </body>
 </html>

@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.contrib import messages
+from django.contrib.auth.models import User
+from django.shortcuts import render, redirect
 from .models import Weapon
 from django.contrib.sessions.models import Session
 from django.views.generic import DetailView as DV, ListView as LV, CreateView as CV
@@ -7,6 +9,8 @@ from .forms import WeaponForm
 # from User.models import User
 from django.utils import timezone
 from django.http import JsonResponse
+from django.contrib.auth import login, logout, authenticate
+
 
 # Create your views here.
 
@@ -30,7 +34,8 @@ def online_users():
 
 
 def viewers_counter(request):
-    return JsonResponse({'counter': Session.objects.count()})
+    return JsonResponse({'counter': Session.objects.filter(expire_date__lte=timezone.now()).count()})
+
 
 def about(request):
     return render(request, 'hand_carried_guns/about.html')
