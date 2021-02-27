@@ -17,7 +17,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
             integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
             crossorigin="anonymous"></script>
-    <script src="{% static 'js/online_users_counter.js' %}"></script>
+    <script src="{% static 'hand_carried_guns/js/online_users_counter.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'hand_carried_guns/main.css' %}">
 </head>
 
@@ -28,11 +28,11 @@
         <div class="container">
             <div class="collapse navbar-collapse" id="navbarToggle">
                 <div class="navbar-nav mr-auto">
-                    <a class="nav-item nav-link" href="{% url 'hand_carried_guns:home' %}">Home</a>
-                    <a class="nav-item nav-link" href="{% url 'hand_carried_guns:about' %}">About</a>
-                    <a class="nav-item nav-link" href="{% url 'hand_carried_guns:search' %}">Search</a>
+                    <a class="nav-item nav-link" href="{% url 'weapons:home' %}">Home</a>
+                    <a class="nav-item nav-link" href="{% url 'weapons:about' %}">About</a>
+                    <a class="nav-item nav-link" href="{% url 'weapons:search' %}">Search</a>
                     {% if user.is_authenticated %}
-                    <a class="nav-item nav-link" href="{% url 'hand_carried_guns:model_create' %}">Create</a>
+                    <a class="nav-item nav-link" href="{% url 'weapons:model_create' %}">Create</a>
                     {% endif %}
                 </div>
 {#            # TODO do something about it#}

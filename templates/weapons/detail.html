@@ -1,4 +1,4 @@
-{% extends "hand_carried_guns/main.html" %}
+{% extends "weapons/main.html" %}
 {% block content %}
     <div class="card">
         <div class="card-body">
@@ -19,10 +19,10 @@
 {#        </div>#}
 {#    </article>#}
     <div class="bot-btn-section">
-        <a class="back-btn" href="{% url 'hand_carried_guns:home' %}">Back to homepage</a>
+        <a class="back-btn" href="{% url 'weapons:home' %}">Back to homepage</a>
         {#        <script>#}
         {#            let nextModel = window.location.href#}
         {#        </script>#}
-        {#        <a class="next-btn" href="{% url 'hand_carried_guns-home' %}">Next model</a>#}
+        {#        <a class="next-btn" href="{% url 'weapons-home' %}">Next model</a>#}
     </div>
 {% endblock content %}

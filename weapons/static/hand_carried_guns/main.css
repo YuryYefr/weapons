@@ -1,5 +1,5 @@
 body {
-    background: url("/static/img/gun_image.jpg") fixed;
+    background: url("images/gun.gif") no-repeat;
     color: #333333;
     margin-top: 5rem;
     height: 100%;

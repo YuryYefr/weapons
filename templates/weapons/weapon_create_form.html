@@ -1,0 +1,8 @@
+{% extends 'weapons/main.html' %}
+{% block content %}
+    <form method="post" class="col-xs-4 col-sm-2">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save">
+    </form>
+{% endblock %}

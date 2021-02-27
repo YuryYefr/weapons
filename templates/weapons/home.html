@@ -1,19 +1,30 @@
-{% extends 'hand_carried_guns/main.html' %}
-{%  block title %}Weapons{%  endblock %}
+{% extends 'weapons/main.html' %}
+{% block title %}Weapons{% endblock %}
 {% block content %}
     <h3>Click model for details</h3>
     <br style="line-height:10px">
     <div class="float-right">
-    <p id="viewers-counter"></p>
+        <p id="viewers-counter"></p>
     </div>
+    <div>
+        <a href="hand_carried_gun">Hand Weapons</a>
+        <a href="vehicle">Vehicle</a>
+    </div>
+{#    <form action="/" method="get">#}
+{#        <label for="weapon_type_select">Choose Type</label>#}
+{#        <select id="weapon_type_select" onchange="this.form.submit()">#}
+{#        <option value="hand_weapons">Hand Weapons</option>#}
+{#        <option value="Vehicle">Vehicle</option>#}
+{#    </select>#}
+{#    </form>#}
     <div class="model">
         {% for item in model %}
             <div class="model">
                 <h4><a class="model-title"
-                       href="{% url 'hand_carried_guns:weapons_detail' item.id %}">{{ item.technical_name }}</a></h4>
+                       href="{% url 'weapons:detail' item.id %}">{{ item.technical_name }}</a></h4>
             </div>
             <iframe width="420" height="315" allowfullscreen
-                    src="{{ item.video_link}}">
+                    src="{{ item.video_link }}">
             </iframe>
         {% endfor %}
     </div>

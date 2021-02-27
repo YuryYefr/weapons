@@ -33,10 +33,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'hand_carried_guns.apps.HandCarriedGunsConfig',
+    'weapons.apps.WeaponsConfig',
     'crispy_forms',
     'django_filters',
-    'users.apps.UsersConfig'
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [

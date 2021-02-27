@@ -21,9 +21,8 @@ def register(request):
 def c_login(request):
     if request.GET:
         user = authenticate(request, username=request.GET['username'], password=request.GET['password'])
-        if user:
-            login(request, user)
-            return redirect('/')
+        login(request, user) if user else messages.warning(request, 'Check credentials')
+        return redirect('/')
     else:
         form = AuthenticationForm()
         return render(request, 'users/login.html', {'form': form})

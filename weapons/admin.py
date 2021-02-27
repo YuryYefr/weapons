@@ -6,11 +6,11 @@ from .models import Weapon
 
 class WeaponAdminPanel(admin.ModelAdmin):
     fieldsets = [
-        (None, {'fields': ['technical_name', 'creation_date', 'video_link']}),
+        (None, {'fields': ['technical_name', 'weapon_type', 'entered_service_date', 'video_link']}),
         ('Model info', {'fields': ['weight', 'rate_of_fire', 'ammo_capacity', 'currently_in_use'], 'classes': [
             'collapse']}),
     ]
-    list_filter = ['creation_date']
+    list_filter = ['entered_service_date']
     search_fields = ['technical_name']
 
 

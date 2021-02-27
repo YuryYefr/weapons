@@ -38,28 +38,30 @@ def viewers_counter(request):
 
 
 def about(request):
-    return render(request, 'hand_carried_guns/about.html')
+    return render(request, 'weapons/about.html')
 
 
 class WeaponsList(LV):
     """List of models with pagination"""
     model = Weapon
-    template_name = 'hand_carried_guns/home.html'
+    template_name = 'weapons/home.html'
     context_object_name = 'model'
     paginate_by = 5
     ordering = ['-id']
 
     def get_context_data(self, *, object_list=None, **kwargs):
         ctx = super(WeaponsList, self).get_context_data(**kwargs)
-        # ctx['users'] = online_users()
-        # ctx['users'] = Session.objects.count()
         return ctx
+
+    def get_queryset(self):
+        ctx = super(WeaponsList, self).get_queryset()
+        return ctx.filter(weapon_type=self.request.path.replace('/', '') or 'hand_carried_gun')
 
 
 class FilterList(LV):
     """search logic"""
     model = Weapon
-    template_name = 'hand_carried_guns/search.html'
+    template_name = 'weapons/search.html'
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
@@ -70,7 +72,7 @@ class FilterList(LV):
 class WeaponDetail(DV):
     """detailed view of every model"""
     model = Weapon
-    template_name = 'hand_carried_guns/weapons_detail.html'
+    template_name = 'weapons/detail.html'
 
 
 class WeaponCreate(CV):

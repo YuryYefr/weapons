@@ -1,7 +1,0 @@
-{% extends 'hand_carried_guns/main.html' %}
-{% block content %}
-    <form method="post" class="p-2">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Save">
-</form>
-{%  endblock %}

@@ -9,7 +9,7 @@ class WeaponsFilter(django_filters.FilterSet):
         ('0', 'No')
     )
 
-    currently_in_use = django_filters.ChoiceFilter(choices=IN_USE, label='active')
+    currently_in_use = django_filters.ChoiceFilter(choices=IN_USE, label='Active')
 
     class Meta:
         model = Weapon
